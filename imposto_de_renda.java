@@ -11,12 +11,11 @@
 		 * 4) A pessoa pode abater até 30% do seu imposto bruto devido gastos com
 		  médicos e educação, mas se seus gastos médicos e educacionais forem abaixo
 		  desses 30%, apenas os gastos médicos e educacionais podem ser abatidos
-		  
  */
-
 
 package b_Estrutura_Condicional;
 
+//importações
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -55,6 +54,7 @@ public class imposto_de_renda {
 		double gastosEducacionais = sc.nextDouble();
 
 		// condicional para calcular imposto sobre Salário
+		
 		if (rendaMensal < 3000) {
 			impostoSalMensal = 0;
 		} else if (rendaMensal >= 3000 && rendaMensal < 5000) {
@@ -62,10 +62,10 @@ public class imposto_de_renda {
 		} else {
 			impostoSalMensal = rendaMensal * 0.2;
 		}
+		
 		double impostoSobreSal = impostoSalMensal * 12;// imposto sobre salário
 
 		// condicional para calcular imposto sobre prestação de serviços
-
 		if (rendaAnualComPrestacaoDeServicos > 0) {
 			impostoPrestServ = rendaAnualComPrestacaoDeServicos * 0.15;
 		}
