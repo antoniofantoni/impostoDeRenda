@@ -1,3 +1,20 @@
+/*
+		 * Regras:
+		 
+		 * 1) Salário mensal: abaixo de 3000, livre de imposto; 3000 ate 5000 exclusive,
+		 * imposto de 10%; 5000 pra cima, imposto de 20%;
+		  
+		 * 2) teve renda com prestação de serviços, imposto de 15%;
+		 
+		 * 3) teve ganha capital(Imóveis, ações), imposto de 20%;
+		 
+		 * 4) A pessoa pode abater até 30% do seu imposto bruto devido gastos com
+		  médicos e educação, mas se seus gastos médicos e educacionais forem abaixo
+		  desses 30%, apenas os gastos médicos e educacionais podem ser abatidos
+		  
+ */
+
+
 package b_Estrutura_Condicional;
 
 import java.util.Locale;
@@ -8,21 +25,7 @@ public class imposto_de_renda {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		/*
-		 * Regras:
-		 * 
-		 * 1) Salário mensal: abaixo de 3000, livre de imposto; 3000 ate 5000 exclusive,
-		 * imposto de 10%; 5000 pra cima, imposto de 20%;
-		 * 
-		 * 2) teve renda com prestação de serviços, imposto de 15%;
-		 * 
-		 * 3) teve ganha capital(Imóveis, ações), imposto de 20%;
-		 * 
-		 * 4) A pessoa pode abater até 30% do seu imposto bruto devido gastos com
-		 * médicos e educação, mas se seus gastos médicos e educacionais forem abaixo
-		 * desses 30%, apenas os gastos médicos e educacionais podem ser abatidos
-		 * 
-		 */
+		
 
 		// variaveis
 		double impostoSalMensal = 0;
@@ -51,7 +54,7 @@ public class imposto_de_renda {
 		System.out.print("Gastos educacionais: ");
 		double gastosEducacionais = sc.nextDouble();
 
-		// condicional para calcula imposto sobre Sal
+		// condicional para calcular imposto sobre Salário
 		if (rendaMensal < 3000) {
 			impostoSalMensal = 0;
 		} else if (rendaMensal >= 3000 && rendaMensal < 5000) {
@@ -59,7 +62,7 @@ public class imposto_de_renda {
 		} else {
 			impostoSalMensal = rendaMensal * 0.2;
 		}
-		double impostoSobreSal = impostoSalMensal * 12;// imposto sobre sal
+		double impostoSobreSal = impostoSalMensal * 12;// imposto sobre salário
 
 		// condicional para calcular imposto sobre prestação de serviços
 
@@ -80,12 +83,9 @@ public class imposto_de_renda {
 			abatimento = impostoBruto * 0.3;
 		} else {
 			abatimento = gastosDedutiveis;
-
 		}
 		
-		
-
-		// OUTPUT USUÁRIO
+		// RESULTADOS - OUTPUTS
 
 		System.out.println("");
 		
@@ -111,7 +111,5 @@ public class imposto_de_renda {
 		System.out.printf("Imposto devido: %.2f%n", impostoBruto-abatimento);
 
 		sc.close();
-
 	}
-
 }
